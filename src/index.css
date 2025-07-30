@@ -71,12 +71,7 @@ header > nav{
 header > nav.navbar-scrolled{
   background-color: rgba(0, 0, 0, .6)!important;
 }
-@media(max-width:1199.98px){
-  header > nav,
-  header > nav.navbar-scrolled{
-    background-color: rgba(0, 0, 0, .9)!important;
-  }
-}
+
 
 /* Hero Section */
 #hero{
@@ -101,6 +96,7 @@ header > nav.navbar-scrolled{
   position: absolute;
   z-index: 0;
 }
+
 #hero > .container{
   position: relative;
   z-index: 1;
@@ -139,6 +135,7 @@ header > nav.navbar-scrolled{
   opacity: 1;
 }
 
+
 .conteiner-favoritos .movie-card:hover{
   transform: unset;
 }
@@ -157,14 +154,46 @@ div#card-overlay {
 .movie-card:hover #card-overlay{
   opacity: 1;
 }
-/* 
-.movie-card:hover {
-  transform: scale(1.1);
-  z-index: 1;
-  overflow-y: hidden;
-  cursor: pointer;
-} */
 
 .conteiner-favoritos .movie-row.d-flex {
   flex-wrap: wrap;
+}
+
+@media(max-width:1199.98px){
+  header > nav,
+  header > nav.navbar-scrolled{
+    background-color: rgba(0, 0, 0, 1)!important;
+  }
+  input#busca {
+      background: transparent;
+      color: #fff;
+      margin-bottom: 32px;
+  }
+  .movie-card:hover #btn-favoritar{
+    opacity: 1;
+  }
+  .movie-card:hover{
+    transform: unset;
+  }
+  .movie-card #btn-favoritar{
+    opacity: 1;
+    font-size: 18px;
+  }
+}
+
+@media(max-width:576px){
+  #hero{
+    min-height: 70vh;
+  }
+  .movie-card {
+    transition: transform 0.3s ease;
+    width: 200px;
+    flex-shrink: 0;
+  }
+  .movie-row {
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    padding: 16px;
+}
+  
 }

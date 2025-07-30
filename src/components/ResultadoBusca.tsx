@@ -56,7 +56,7 @@ const ResultadoBusca = () => {
       <main>
         <div className="mt-5">
           <Title text="Resultado da busca">
-            <a style={{width: "fit-content", position:"fixed", right:"16px", zIndex:"1"}} className="btn btn-md btn-warning text-end ms-2" onClick={limparBusca}>
+            <a style={{width: "fit-content", position:"fixed", right:"16px", zIndex:"100"}} className="btn btn-md btn-warning text-end ms-2" onClick={limparBusca}>
               <i className="me-2 bi bi-arrow-left"></i>
               Voltar
             </a>
