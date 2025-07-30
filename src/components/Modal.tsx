@@ -66,11 +66,11 @@ const Modal:React.FC<Props> = ({id, type}) => {
              <div className='modal-body'>
                {loading && <Spinner />}
                 {movie !== null && (
-                  <div className="container">
+                  <div className="container p-0">
 
-                      <div className="row mt-4">
-                        <div className="col-lg-4 mb-4 mb-lg-0">
-                          <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} className="img-fluid" />
+                      <div className="row mx-auto">
+                        <div className="col-lg-4 mb-4 mb-lg-0 p-0">
+                          <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} className="img-fluid" />
                         </div>
                         <div className="col-lg-8">
                           

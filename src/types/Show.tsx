@@ -38,5 +38,5 @@ export interface Provider {
 
 export type Favorites = {
   id:number
-  type: string | null
+  type?: string
 }

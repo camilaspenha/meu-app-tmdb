@@ -1,3 +1,7 @@
+/*
+GERAL
+________________________________ */
+
 body{
   background-color: #000!important;
   color: #fff!important;
@@ -17,48 +21,11 @@ h1{
     bottom: 12px!important;
     left: 8px!important;
 }
-input#busca {
-    background: transparent;
-    color: #fff ;
-}
-input::placeholder {
-  color: #fff!important; /* ou qualquer cor desejada */
-  opacity: 1!important; /* opcional: controla a opacidade */
-}
-/* Movie Section */
-.movie-section {
-  outline: none;
-}
 
-.movie-row {
-  scroll-behavior: smooth;
-  overflow-y: hidden;
+/*
+HEADER E MENU NAV
+________________________________ */
 
-}
-
-.movie-card {
-  transition: transform 0.3s ease;
-  width: 300px;
-  flex-shrink: 0;
-}
-
-.conteiner-favoritos .movie-card{
-  margin-top:16px
-}
-.conteiner-favoritos .movie-row.d-flex{
-  justify-content: center!important;
-}
-
-.movie-card:hover{
-  transform: scale(1.1);
-  z-index: 1;
-  overflow-y: hidden;
-  cursor: pointer;
-}
-.movie-image {
-  object-fit: cover;
-}
-/*Navbar*/
 header > nav{
   position: fixed!important;
   width: 100%!important;
@@ -68,43 +35,76 @@ header > nav{
   background-color: transparent!important;
   transition: background-color .3s;
 }
+
 header > nav.navbar-scrolled{
   background-color: rgba(0, 0, 0, .6)!important;
 }
 
+@media(max-width: 1199.98px){
+  header > nav,
+  header > nav.navbar-scrolled{
+    background-color: rgba(0, 0, 0, 1)!important;
+  }
+}
 
-/* Hero Section */
+/*
+BANNER HERO
+________________________________ */
+
 #hero{
   min-height: 40vh;
   background-repeat: no-repeat;
   background-position: top left;
-  /* background-image: url('/public/hero_bg.jpg'); */
+  background-image: url('https://raw.githubusercontent.com/camilaspenha/meu-app-tmdb/refs/heads/main/docs/hero_bg.jpg');
   background-attachment: fixed;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
 }
+
 #hero::after{
   content:"";
   display: block;
   width: 100%;
   height: 100%;
   top: 0;
-  /* background-color: rgba(0, 0, 0, 0.8);  */
   background: linear-gradient(360deg,rgba(0, 0, 0,1),rgba(0, 0, 0, 0.4));
   position: absolute;
   z-index: 0;
+  border-bottom: 5px solid #000
 }
 
 #hero > .container{
   position: relative;
   z-index: 1;
 }
-/* Form Busca */
+
+@media(max-width:992px){
+   #hero{
+    min-height: 60vh;
+  }
+}
+
+/*
+INPUTS E FORMS
+________________________________ */
+
+input#busca {
+    background: transparent;
+    color: #fff ;
+}
+
+input::placeholder {
+  color: #fff!important;
+  opacity: 1!important; 
+  
+}
+
 .form-busca {
     position: relative;
 }
+
 .form-busca i {
     position: absolute;
     top: 6px;
@@ -112,15 +112,95 @@ header > nav.navbar-scrolled{
     color: #808080;
     cursor: pointer;
 }
-/* Modal */
-.modal-content{
-   background-color: #191919!important;
-   color: #fff!important
+
+@media(max-width: 1199.98px){
+  input#busca {
+    margin-bottom: 32px;
+  }
 }
-.modal-header,
-.modal-footer{
-  border:none!important
+/*
+CARDS DOS FILMES
+________________________________ */
+
+.movie-section {
+  outline: none;
 }
+
+.movie-row {
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+
+.conteiner-favoritos .movie-row{
+  justify-content: center!important;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  transition: transform 0.3s ease;
+  width: 300px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.movie-card:hover{
+  transform: scale(1.02);
+  overflow-y: hidden;
+  cursor: pointer;
+}
+.conteiner-favoritos .movie-card:hover{
+  transform: unset;
+}
+
+.movie-image {
+  object-fit: cover;
+  width: 100%!important;
+  height: auto;
+}
+
+.conteiner-favoritos .movie-card{
+  margin-top:16px 
+}
+
+@media(max-width:1199.98px){
+  .movie-card:hover{
+    transform: unset!important;
+  }
+}
+
+@media(max-width:992px){
+  .movie-row {
+    padding: 16px;
+  }
+
+  .movie-card {
+    height: 300px;
+    width: 200px;
+  }
+
+  .movie-image {
+    object-fit: unset;
+    height: 100%!important;
+    width:auto;
+  }
+  
+}
+
+#card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: block;
+  opacity: 1;
+}
+
+/*
+BOTAO FAVORITAR - CARD DE FILMES
+________________________________ */
 
 #btn-favoritar{
   z-index: 10;
@@ -130,50 +210,15 @@ header > nav.navbar-scrolled{
   font-size: 24px;
   transition: all .2s ease-in-out;
 }
+
 .conteiner-favoritos #btn-favoritar,
 .movie-card:hover #btn-favoritar{
   opacity: 1;
 }
 
-
-.conteiner-favoritos .movie-card:hover{
-  transform: unset;
-}
-div#card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #00000021;
-    z-index: 1;
-    display: block;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-}
-.movie-card:hover #card-overlay{
-  opacity: 1;
-}
-
-.conteiner-favoritos .movie-row.d-flex {
-  flex-wrap: wrap;
-}
-
 @media(max-width:1199.98px){
-  header > nav,
-  header > nav.navbar-scrolled{
-    background-color: rgba(0, 0, 0, 1)!important;
-  }
-  input#busca {
-      background: transparent;
-      color: #fff;
-      margin-bottom: 32px;
-  }
-  .movie-card:hover #btn-favoritar{
-    opacity: 1;
-  }
-  .movie-card:hover{
-    transform: unset;
+   .movie-card:hover #btn-favoritar{
+    opacity: 1; 
   }
   .movie-card #btn-favoritar{
     opacity: 1;
@@ -181,19 +226,16 @@ div#card-overlay {
   }
 }
 
-@media(max-width:576px){
-  #hero{
-    min-height: 70vh;
-  }
-  .movie-card {
-    transition: transform 0.3s ease;
-    width: 200px;
-    flex-shrink: 0;
-  }
-  .movie-row {
-    scroll-behavior: smooth;
-    overflow-y: hidden;
-    padding: 16px;
+/*
+MODAL DETALHES DO FILME/SERIE
+________________________________ */
+
+.modal-content{
+   background-color: #191919!important;
+   color: #fff!important
 }
-  
+
+.modal-header,
+.modal-footer{
+  border:none!important
 }

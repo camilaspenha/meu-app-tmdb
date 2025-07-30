@@ -1,7 +1,6 @@
 import { useSearch } from "../context/useSearch"
 import FavoritosList from "./FavoritosList"
 import ResultadoBusca from "./ResultadoBusca"
-// import Spinner from "./Spinner"
 import Title from "./Title"
 const ConteudoFavoritos = () => {
 

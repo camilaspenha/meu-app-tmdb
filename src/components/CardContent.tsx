@@ -45,7 +45,6 @@ const CardContent:React.FC<Props> = ({movie, type}) => {
       setFavorited(!favorited);
     };
 
-
   return (
     <>
       <div className='d-flex position-relative'>
