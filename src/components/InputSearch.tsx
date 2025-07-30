@@ -38,7 +38,7 @@ const InputSearch = () => {
         id="busca"
         name="busca"
         className="form-control"
-        placeholder="Buscar..."
+        placeholder="Buscar no site ..."
         onChange={handleSearch}
         ref={inputRef}
         value={query}

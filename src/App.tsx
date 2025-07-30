@@ -1,26 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Favoritos from "./pages/Favoritos"
+import Inicio from "./Inicio"
 
-import NavBar from './components/NavBar'
-import { GlobalSearchStorage } from './context/GlobalSearchStorage'
-import Footer from './components/Footer'
-import { handleScroll } from './utils/utils'
-import Conteudo from './components/Conteudo'
+import {SITE_URL} from '../constants/dados'
 
-const App = () => {
-  
-  window.addEventListener('scroll', handleScroll);
-  // const {isSearch} = useSearch()
+function App() {
   return (
-    <>
-      <GlobalSearchStorage>
-        <header>
-          <NavBar />
-        </header>
-
-          <Conteudo />
-      </GlobalSearchStorage>
-      
-      <Footer />
-    </>
+    <Router basename={SITE_URL}>
+      <Routes>
+      <Route path="/" element={<Inicio />} />
+      <Route path="/favoritos" element={<Favoritos />} />
+    </Routes>
+    </Router>
   )
 }
 
