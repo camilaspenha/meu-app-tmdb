@@ -78,7 +78,7 @@ header > nav.navbar-scrolled{
   min-height: 40vh;
   background-repeat: no-repeat;
   background-position: top left;
-  background-image: url('/public/hero_bg.jpg');
+  /* background-image: url('/public/hero_bg.jpg'); */
   background-attachment: fixed;
   position: relative;
   display: flex;
