@@ -71,7 +71,7 @@ const ResultadoBusca = () => {
             <>
             <div className="container px-4">
               <h3 className="text-warning">Ops!</h3>
-              <p className="mt-4">Nenhum resultado foi encontrado para esta busca.</p>
+              <h4 className="mt-4">Nenhum resultado foi encontrado para esta busca.</h4>
               <p>Tente com um nome diferente ;) </p>
             </div>
             </>

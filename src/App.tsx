@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Favoritos from "./pages/Favoritos"
-import Inicio from "./Inicio"
+import Inicio from "./pages/Inicio"
 
-import {SITE_URL} from '../constants/dados'
+import {SITE_URL} from './constants/dados'
 
 function App() {
   return (

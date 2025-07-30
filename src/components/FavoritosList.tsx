@@ -46,7 +46,7 @@ const FavoritosList = () => {
 
         <div className="container px-4">
           <h3 className="text-warning">Ops!</h3>
-          <p className="mt-4">Nenhum favorito ainda.</p>
+          <h5 className="mt-4">Nenhum favorito ainda.</h5>
           <p>Comece com uma busca de títulos ;) </p>
         </div>
       ) }
