@@ -92,7 +92,7 @@ const Modal:React.FC<Props> = ({id, type}) => {
                               <h5 className="mt-4">Onde assistir</h5>
                                 <div className='d-flex flax-wrap'>
                                   {providers.map((prov) => (
-                                  providerLinks[prov.provider_name] &&
+                                 prov.provider_name && prov.logo_path  &&
                                   <div key={prov.provider_id} title={prov.provider_name}>
                                     <a
                                       key={prov.provider_id}
