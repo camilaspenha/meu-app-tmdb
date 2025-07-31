@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <script>
+      const redirect = sessionStorage.redirect;
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        history.replaceState(null, '', redirect);
+      }
+    </script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/camilaspenha/meu-app-tmdb/8fec7156a31833801a9e6ae17b38160c4ec152a1/docs/git.svg" />
     
